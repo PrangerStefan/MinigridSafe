@@ -68,10 +68,7 @@ class Adversary(WorldObj):
 
     def to_state(self):
         color = self.color.capitalize()
-        if self.carrying:
-            carrying = f"{self.carrying.color.capitalize()}{self.carrying.type.capitalize()}"
-        else:
-            carrying = ""
+        carrying = ""
         return AdversaryState(color=color, col=self.adversary_pos[0], row=self.adversary_pos[1], view=self.adversary_dir, carrying=carrying)
 
     def get_action(self, env):

@@ -1104,7 +1104,7 @@ class MiniGridEnv(gym.Env):
                 pass
 
 
-        carrying = "" if not self.carrying else f"{self.carrying.color.capitalize()}{self.carrying.type.capitalize()}"
+        carrying = ""# if not self.carrying else f"{self.carrying.color.capitalize()}{self.carrying.type.capitalize()}"
         state = State(colAgent=self.agent_pos[0], rowAgent=self.agent_pos[1], viewAgent=self.agent_dir, carrying=carrying, adversaries=adversaries, keys=keys, doors=doors)
         return state
 

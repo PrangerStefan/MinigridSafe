@@ -57,7 +57,7 @@ def to_state(ints, booleans):
             pos = formula.find("Carrying")
             l = len("Carrying")
             any_carrying[formula[0:pos]] = formula[pos+l:]
-    agentState = (ints["colAgent"], ints["rowAgent"], ints["viewAgent"], any_carrying.get("Agent", ""))
+    agentState = (ints["colAgent"], ints["rowAgent"], ints["viewAgent"], "")
     adversaries = tuple()
     boxes = tuple()
     balls = tuple()
@@ -67,7 +67,7 @@ def to_state(ints, booleans):
     for color in COLOR_NAMES:
         color = color.capitalize()
         if "col" + color in ints:
-            adversaries += (AdversaryState(color, ints["col"+color], ints["row"+color], ints["view"+color], carrying=any_carrying.get(color, "")),)
+            adversaries += (AdversaryState(color, ints["col"+color], ints["row"+color], ints["view"+color], carrying=""),)
         if "col" + color + "Box" in ints:
             pass
         if "col" + color + "Key" in ints:
